@@ -7,7 +7,7 @@ function expect(actual) {
       if (actual == expected) {
         console.log('Pass')
       } else {
-        console.log('Fail')
+        console.log(`Fail - Expected: ${expected}  Got: ${actual}`)
       }
     }
   }
