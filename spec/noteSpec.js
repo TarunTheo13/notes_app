@@ -1,7 +1,10 @@
-// it(' 2 + 2 is equal to 4', function(){
-//     expect(2+2).toEqual(4)
-//   })
-  
-//   it(' 2 + 3 is equal to 4', function(){
-//     expect(2+3).toEqual(4)
-//   })
+
+it('creates a note', function(){
+  let note = new Note('Books');
+  expect(note.createNote).toEqual('Books')
+})
+
+it('shows the first 20 characters of the note', function(){
+  let note = new Note('These are my favourite books')
+  expect(note.getTwenty).toEqual('These are my favourite b')
+})
