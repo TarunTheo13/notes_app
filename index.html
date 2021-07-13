@@ -10,6 +10,15 @@
   <body>
     <section>
       <h1>Notes</h1>
+      <form>
+        <textarea name="noteArea" id="pad" cols="30" rows="10"></textarea>
+      </form>
+      <button value="submit" onclick="notes.createNote(document.getElementById('pad'))">Create</button>
+    <div id='noteList'>
+      <ul id="list">
+
+      </ul>
+    </div>
     </section>
     <script src="src/note.js"></script>
     <script src="src/notes.js"></script>
