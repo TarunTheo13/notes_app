@@ -1,22 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-  const updateNotes = () => {
-    document.getElementById('writtenNotes').innerText = notes.seeListIntros();
+  const updateNotes = (string) => {
+    const newA = document.createElement("a");
+    const newContent = document.createTextNode(string);
+    newA.appendChild(newContent);
+    const currentElement = document.getElementById("pikachu");
+    document.body.insertBefore(newA, currentElement);
   }
-  
+
   const notes = new Notes();
 
   document.querySelector('#create').addEventListener('click', () => {
     notes.createNote(document.getElementById('pad').value);
     console.log(notes.notes)
     document.getElementById('pad').value = ""
-    updateNotes()
+    updateNotes("PIKKAAAa")
   });
 });
 
-
-// intros.forEach(element => {
-//   <href>element</href>
-// };
-
-//document.createElement(a)
+  // After we create a new note
+  // grab abreviation from new note.
+  // pass abreviation as argumet to update notes.
+  // use abreviation as content for new Element.
