@@ -3,23 +3,17 @@
 class Notes {
   constructor() {
     this.notes = []
+    this.abbreviation;
   };
 
   createNote(note) {
     if (note.length <= 20) {
-      this.notes.push([note, note]);
+      this.abbreviation = note;
+      this.notes.push([this.abbreviation, note]);
     } else {
-      let abbreviation = note.substring(0, 20)
-      this.notes.push([abbreviation, note]);
+      this.abbreviation = note.substring(0, 20)
+      this.notes.push([this.abbreviation, note]);
     };
-  };
-
-  seeListIntros() {
-    let intros = [];
-    for (let i = 0; i < this.notes.length; i++){
-      intros.push(this.notes[i][0]);
-    };
-    return intros;
   };
 
 };
