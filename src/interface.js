@@ -26,21 +26,27 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNotes()
   });
 
-  const data = { username: 'example' };
 
-  fetch('https://makers-emojify.herokuapp.com', {
-    method: 'POST', 
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({'text': "Hello, :earth_africa: :smile: :see_no_evil: :alien: :heart: :blue_heart:"}),
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+// addEventLinstener for getEmojiData()? - how to use the function below?
+
+  function getEmojiData(inputText) {
+    fetch('https://makers-emojify.herokuapp.com', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({'text': "inputText"}),
+    })
+    .then(response => response.json())
+    .then(inputText => {
+      JSON.stringify(inputText);
+      //console.log('Success:', data);  
+      // create new note adding emoji?
+
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
 
 });
