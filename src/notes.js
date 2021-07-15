@@ -2,17 +2,16 @@
 
 class Notes {
   constructor() {
-    this.notes = []
-    this.abbreviation;
+    this.notes = [];
   };
 
   createNote(note) {
+    this.currentNote = note;
     if (note.length <= 20) {
-      this.abbreviation = note;
-      this.notes.push([this.abbreviation, note]);
+      this.notes.push([note, note]);
     } else {
-      this.abbreviation = note.substring(0, 20)
-      this.notes.push([this.abbreviation, note]);
+      let abbreviation = note.substring(0, 20) + '...'
+      this.notes.push([abbreviation, note]);
     };
   };
 
