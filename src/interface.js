@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateNotes = () => {
     const array = notes.notes[noteCounter];
     const newA = document.createElement("a");
-    const newContent = document.createTextNode(array[0]);
+    const newContent = document.createTextNode(getEmojiData(array[0]));
     newA.appendChild(newContent);
     const currentElement = document.getElementById("pikachu");
     document.body.insertBefore(newA, currentElement);
@@ -30,23 +30,25 @@ document.addEventListener("DOMContentLoaded", () => {
 // addEventLinstener for getEmojiData()? - how to use the function below?
 
   function getEmojiData(inputText) {
+    const emojiText = 'bilbo baggins';
     fetch('https://makers-emojify.herokuapp.com', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({'text': "inputText"}),
+      body: JSON.stringify({'text': inputText}),
     })
     .then(response => response.json())
     .then(inputText => {
-      JSON.stringify(inputText);
-      //console.log('Success:', data);  
-      // create new note adding emoji?
-
+      //console.log('Success:', inputText);
+      const emojiText = inputText.emojified_text;
+      console.log(emojiText);
     })
     .catch((error) => {
       console.error('Error:', error);
     });
-  }
+    return emojiText;
+    
+  };
 
 });
