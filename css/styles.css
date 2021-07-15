@@ -8,4 +8,87 @@ h1 {
   font-size: 128px;
   font-weight: 800;
   text-align: center;
+  text-shadow: 0 0 10px rgb(8, 0, 56);
+}
+
+.notePad {
+  background-color: rgb(250, 251, 239);
+  display:block;
+  margin: auto;
+  border-radius: 8px;
+  border:4px solid rgb(226, 50, 50);
+  box-shadow: 0 0 10px #719ECE;
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
+}
+
+button {
+  display:block;
+  margin:auto;
+  border-radius: 8px;
+  background-color: rgb(255, 224, 185);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.15);
+  padding: 5px 24px;
+}
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.10), 0 17px 50px 0 rgba(0,0,0,0.25);
+}
+
+.fullNotes {
+  display:block;
+  margin: left;
+  border: 2px solid #9e8f7e;
+  background-image: url("https://i.pinimg.com/originals/1a/c6/66/1ac6665aff3e0ba176993b3a6583d2d7.jpg");
+  font-size: 4vw;
+  border-radius: 5px;
+  padding: 5px 24px;
+  width: 40%;
+
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: black;
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
+}
+
+.listNotes {
+  font-family:sans-serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 2px solid #9e8f7e;
+  background-color: rgb(250, 251, 239);
+  padding: 1px 10px;
+  border-radius: 5px;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
