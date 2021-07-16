@@ -86,6 +86,11 @@ a {
   background-color: rgba(133, 164, 248, 0.192);
   padding: 20px;
   box-shadow: 0 5px 7px rgba(83, 65, 65, 0.602);
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
 }
 
 @keyframes fadeIn {
