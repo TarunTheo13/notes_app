@@ -2,12 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const notes = new Notes();
   let noteCounter = 0
-  
-  const updateNotes = () => {
+
+    const updateNotes = () => {
     const array = notes.notes[noteCounter];
+    console.log(array);
     const newA = document.createElement("a");
+    console.log(newA); //undefined!
     const newContent = document.createTextNode(getEmojiData(array[0]));
+    console.log(newContent); //undefined!
     newA.appendChild(newContent);
+    
+
     const currentElement = document.getElementById("pikachu");
     document.body.insertBefore(newA, currentElement);
     newA.href = ""
@@ -26,11 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNotes()
   });
 
+//addEventLinstener for getEmojiData()? - how to use the function below?
 
-// addEventLinstener for getEmojiData()? - how to use the function below?
+  // const submitText = document.querySelector('#create')
+  // submitText.addEventListener('create', function(){
+  // getEmojiData(inputText);
+  // })
 
   function getEmojiData(inputText) {
-    const emojiText = 'bilbo baggins';
+
     fetch('https://makers-emojify.herokuapp.com', {
       method: 'POST', 
       headers: {
@@ -40,15 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(response => response.json())
     .then(inputText => {
-      //console.log('Success:', inputText);
-      const emojiText = inputText.emojified_text;
-      console.log(emojiText);
+      // const newContent = CreateTextNode(inputText.emojified_text, noteCounter)
+      // console.log(newContent)
+      // newA.appendChild(newContent);
+
+       const emojiText = inputText.emojified_text;
+       console.log(emojiText);
+      
+       console.log('Success:', inputText);
+       console.log('Success:', inputText.emojified_text);
     })
     .catch((error) => {
       console.error('Error:', error);
-    });
-    return emojiText;
-    
-  };
-
+    }); 
+  }; 
 });
