@@ -29,21 +29,4 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNotes();
   });
 
-  const data = { username: 'example' };
-
-  fetch('https://makers-emojify.herokuapp.com', {
-    method: 'POST', 
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({'text': "Hello, :earth_africa: :smile: :see_no_evil: :alien: :heart: :blue_heart:"}),
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-
 });
