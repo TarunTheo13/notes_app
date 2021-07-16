@@ -5,17 +5,17 @@ function expect(actual) {
 
     toEqual: function(expected){
       if (actual == expected) {
-        console.log('Pass')
+        console.log('Pass');
       } else {
         console.log(`Fail - Expected: ${expected}  Got: ${actual}`)
       }
     }
-  }
+  };
 }
 
 
 function it(label, callback) {
-  console.log(`Test:${label}`)
-  callback()
+  console.log(`Test:${label}`);
+  callback();
 }
 
