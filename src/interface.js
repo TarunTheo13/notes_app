@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     const newBreak = document.createElement("br");
     document.body.insertBefore(newBreak, currentElement);
-    noteCounter++
+    noteCounter++;
   };
 
   document.querySelector('#create').addEventListener('click', () => {
@@ -38,12 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     body: JSON.stringify({'text': "Hello, :earth_africa: :smile: :see_no_evil: :alien: :heart: :blue_heart:"}),
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 
 });
